@@ -14,6 +14,9 @@ RUN pip install -r requirements.txt
 
 COPY . /app
 
+
+RUN python /app/init_db.py
+
 EXPOSE 5000
 
 ENTRYPOINT [ "python" ]
