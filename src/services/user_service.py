@@ -18,6 +18,11 @@ class UserService(Resource):
     def get(self, user_id):
         abort_if_dont_exists(user_id)
         return repository.get_by_id(user_id), 200
+    
+    def delete(self, user_id):
+        abort_if_dont_exists(user_id)
+        repository.delete(user_id)
+        return '', 204
 
 class UserList(Resource):
     @marshal_with(resource_fields)
