@@ -8,4 +8,4 @@ api.add_resource(UserList, '/v1/users/')
 api.add_resource(UserService, '/v1/users/<user_id>')
 
 if __name__ == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+    app.run(host='0.0.0.0')
