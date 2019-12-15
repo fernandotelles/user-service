@@ -1,6 +1,8 @@
+from config import db
 
-class User:
-    def __init__(self, id, name):
-        super().__init__()
-        self.id = id
-        self.name = name
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80), unique=True, nullable=False)
+
+    def __repr__(self):
+        return '<User (id=%r, name=%r)>' % (self.id, self.name)
